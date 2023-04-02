@@ -93,4 +93,9 @@ public class CaveExplorer {
 
         return true;
     }
+
+    // Step 4: getPath method
+    public String getPath() {
+        return this.path;
+    }
 }
