@@ -28,4 +28,17 @@ public class CaveExplorer {
                 {'R', 'R', 'R', 'R', 'R', 'R'}
         };
     }
+
+    // Step 2: toString method
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int r = 0; r < this.rows; r++) {
+            for (int c = 0; c < this.cols; c++) {
+                sb.append(this.cave[r][c]);
+            }
+            sb.append("\n");
+        }
+
+        return sb.toString();
+    }
 }
