@@ -1,5 +1,14 @@
+/* CaveExplorer.java:
+ * The CaveExplorer class is designed to find a unique path
+ * to a mirror pool in a cave represented by a 2D grid of characters.
+ *
+ * Author: Otabek Aripdjanov 597066
+ * Last updated: 4/2/2023
+ */
+
 import java.io.File;
 import java.util.Scanner;
+
 public class CaveExplorer {
     private int numRows;
     private int numCols;
