@@ -1,6 +1,5 @@
 import java.io.File;
 import java.util.Scanner;
-
 public class CaveExplorer {
     private int numRows;
     private int numCols;
@@ -82,7 +81,6 @@ public class CaveExplorer {
         // No valid path
         return false;
     }
-
     public boolean validCell(int r, int c) {
         // 2D array outOfBounds check
         if (r >= this.cave.length || r < 0 || c < 0 | c >= this.cave[0].length) {
