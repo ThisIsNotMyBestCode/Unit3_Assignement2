@@ -1,3 +1,6 @@
+import java.io.File;
+import java.util.Scanner;
+
 public class CaveExplorer {
     private int numRows;
     private int numCols;
@@ -97,5 +100,30 @@ public class CaveExplorer {
     // Step 4: getPath method
     public String getPath() {
         return this.path;
+    }
+
+    // Step 5: One parameter constructor to read from a file
+    public CaveExplorer(String fname) throws Exception {
+        Scanner in = new Scanner(new File(fname));
+        this.rows = in.nextInt();
+        this.cols = in.nextInt();
+        this.cave = new char[this.rows][this.cols];
+
+
+        this.path = "";
+        in.nextLine(); // consume the newline character
+        for (int r = 0; r < this.rows; r++) {
+            String line = in.nextLine();
+            for (int c = 0; c < this.cols; c++) {
+                this.cave[r][c] = line.charAt(c);
+                if (this.cave[r][c] == 'S') {
+                    this.startRow = r;
+                    this.startCol = c;
+                }
+            }
+        }
+        if (this.startRow == 0) {
+            throw new Exception("Missing start location");
+        }
     }
 }
