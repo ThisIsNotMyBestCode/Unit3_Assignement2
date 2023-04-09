@@ -9,7 +9,6 @@ public class CaveExplorerDriver {
         System.out.println("Current state of grid: \n" + ce.toString() + "\n");
         System.out.println("=============================================\n");
 
-
         System.out.println("Now lets test with the file...\n");
         try {
             CaveExplorer ce1 = new CaveExplorer("./src/cave_layout.txt");
