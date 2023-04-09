@@ -1,10 +1,8 @@
 public class CaveExplorerDriver {
 
     public static void main(String[] args) {
-        // Default constructor
         CaveExplorer ce = new CaveExplorer();
 
-        // Test solution and methods
         System.out.println("Initial grid: \n" + ce.toString());
         System.out.println("Is there a solution: " + ce.solve() + "\n");
         System.out.println("Solution path: " +ce.getPath() + "\n");
@@ -14,10 +12,8 @@ public class CaveExplorerDriver {
 
         System.out.println("Now lets test with the file...\n");
         try {
-            //Constructor with the file path
             CaveExplorer ce1 = new CaveExplorer("./src/cave_layout.txt");
 
-            // Test solution and methods
             System.out.println("Initial grid: \n" + ce1.toString());
             System.out.println("Is there a solution: " + ce1.solve() + "\n");
             System.out.println("Solution path: " +ce1.getPath() + "\n");
@@ -27,6 +23,28 @@ public class CaveExplorerDriver {
             e.printStackTrace();
         }
 
-    }
+        //  backtracking
+        String[] caveLayouts = {
+                "5 6\n" +
+                        "RRRRRR\n" +
+                        "R..S.R\n" +
+                        "R.R.RR\n" +
+                        "R.MRRR\n" +
+                        "RRRRRR"
+        };
 
+        for (String layout : caveLayouts) {
+            System.out.println("Now let's test a new cave layout:\n");
+            try {
+                CaveExplorer ce2 = new CaveExplorer(layout, true);
+
+                System.out.println("Initial grid: \n" + ce2.toString());
+                System.out.println("Is there a solution: " + ce2.solve() + "\n");
+                System.out.println("Solution path: " + ce2.getPath() + "\n");
+                System.out.print("Current state of grid: \n" + ce2.toString());
+                System.out.println("=============================================\n");
+            } catch (Exception e) {
+                e.printStackTrace();}
+        }
+    }
 }
