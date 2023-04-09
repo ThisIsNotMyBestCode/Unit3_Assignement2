@@ -133,13 +133,13 @@ public class CaveExplorer {
         return this.path;
     }
 
-    // Step 5: One parameter constructor to read from a file
+    // step 5:Constructor to read from a file
     public CaveExplorer(String fname) throws Exception {
         Scanner in = new Scanner(new File(fname));
         initializeCave(in);
     }
 
-    // New method to initialize the cave with a Scanner object
+    //step 5-continued: New method to initialize the cave with a Scanner object
     private void initializeCave(Scanner in) throws Exception {
         this.rows = in.nextInt();
         this.cols = in.nextInt();
@@ -162,7 +162,7 @@ public class CaveExplorer {
         }
     }
 
-    // New constructor to accept a String layout
+    //step 5-continued: New constructor to accept a String layout
     public CaveExplorer(String layout, boolean isLayout) {
         Scanner in = new Scanner(layout);
         try {

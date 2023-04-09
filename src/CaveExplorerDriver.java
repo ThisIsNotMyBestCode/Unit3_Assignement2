@@ -35,8 +35,10 @@ public class CaveExplorerDriver {
         for (String layout : caveLayouts) {
             System.out.println("Now let's test a new cave layout:\n");
             try {
+                // Constructor with the string input
                 CaveExplorer ce2 = new CaveExplorer(layout, true);
 
+                // Test solution and methods
                 System.out.println("Initial grid: \n" + ce2.toString());
                 System.out.println("Is there a solution: " + ce2.solve() + "\n");
                 System.out.println("Solution path: " + ce2.getPath() + "\n");
